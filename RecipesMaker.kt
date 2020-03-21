@@ -1,12 +1,6 @@
 fun main(args: Array<String>) {
-    println(":: Bienvenido a Recipe Maker ::")
 
-    println("Selecciona la opción deseada")
-    println("1. Hacer una receta")
-    println("2. Ver mis recetas")
-    println("3. Salir")
-
-
+    menu()
     var opcion:String? = readLine()
     //Usando when
     while(opcion != "3"){
@@ -18,6 +12,7 @@ fun main(args: Array<String>) {
         opcion = readLine()
     }
         println("Opcion 3, Saliendo...")
+        readLine()
 }
 
 fun makeRecipe(){
@@ -33,4 +28,15 @@ fun makeRecipe(){
 
 fun viewRecipe(){
     println("Ver mis Recetas")
+}
+
+fun menu(){
+    val menu: String = """
+    :: Bienvenido a Recipe Maker ::
+    Selecciona la opcion deseada.
+    1. Hacer una receta
+    2. Ver mis recetas
+    3. Salir
+    """.trimIndent()
+    println(menu)
 }
