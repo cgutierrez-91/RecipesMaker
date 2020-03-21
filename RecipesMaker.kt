@@ -6,21 +6,31 @@ fun main(args: Array<String>) {
     println("2. Ver mis recetas")
     println("3. Salir")
 
-    val ingredientes:List<String> = listOf<String>("Agua", "Leche", "Carne", "Verduras", "Frutas", "Cereal", "Huevos", "Aceite")
 
     var opcion:String? = readLine()
     //Usando when
     while(opcion != "3"){
         when(opcion){
-            "1" -> {println("Ingresando a Hacer una receta")
-                println("Esta es la Lista de Ingredientes:")
-                println("Ingredientes: ${ingredientes}")
-            }
-            "2" -> println("Mostrando Recetas")
+            "1" -> makeRecipe()
+            "2" -> viewRecipe()
             else -> println("Favor Ingresar una opcion Válida")
         }
         opcion = readLine()
     }
         println("Opcion 3, Saliendo...")
-        readLine()
+}
+
+fun makeRecipe(){
+    val ingredientes:List<String> = listOf<String>("Agua", "Leche", "Carne", "Verduras", "Frutas", "Cereal", "Huevos", "Aceite")
+
+    println("Ingresando a Hacer una receta")
+    println("Esta es la Lista de Ingredientes:")
+
+    for ((indice, item) in ingredientes.withIndex()){
+        println("${indice.plus(1)} $item" )
+    }
+}
+
+fun viewRecipe(){
+    println("Ver mis Recetas")
 }
